@@ -103,10 +103,10 @@ def init_env(output_path, num_env, state, num_players, args, use_sticky_action=T
                 else:
                     env = StochasticFrameSkip(env, n=4, stickprob=-1)
             
-            if args.nn != 'MlpPolicy':
-                env = WarpFrame(env)
+            # if args.nn != 'MlpPolicy':
+            #     env = WarpFrame(env)
             
-            env = ClipRewardEnv(env)
+            # env = ClipRewardEnv(env)
 
             
 

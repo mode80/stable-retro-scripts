@@ -28,8 +28,8 @@ def parse_cmdline(argv):
     parser.add_argument('--env', type=str, default='Joust-Arcade')
     parser.add_argument('--state', type=str, default=None)
     parser.add_argument('--num_players', type=int, default='1')
-    parser.add_argument('--num_env', type=int, default=24)
-    parser.add_argument('--num_timesteps', type=int, default=6000000)
+    parser.add_argument('--num_env', type=int, default=48)
+    parser.add_argument('--num_timesteps', type=int, default=50_000_000)
     parser.add_argument('--output_basedir', type=str, default='.')
     parser.add_argument('--load_p1_model', type=str, default='')
     parser.add_argument('--display_width', type=int, default='292')
@@ -99,7 +99,7 @@ class ModelTrainer:
             
             state, reward, done, info = self.env.step(p1_actions[0])
             time.sleep(0.01)
-            #print(reward)
+            # print(reward)
 
             if done[0]:
                 state = self.env.reset()
